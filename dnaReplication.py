@@ -30,11 +30,20 @@ for i in iStrand:
 		cStrand +='G'
 
 
-print('\n\nInitial Sequence Strand:\n\n ' + iStrand+ '\n')
+print('\n\n Initial Sequence Strand:\n\n ' + iStrand+ '\n')
 
 
-print('Complimentary Base Pair Sequence:\n\n ' + cStrand + '\n\n')
+print(' Complimentary Base Pair Sequence:\n\n ' + cStrand + '\n\n')
 
+iSequence = 'ATGTTTCGAGGCTAA'
+
+print('\n\n Initial DNA Sequence: ' + iSequence + '\n\n')
+
+tSequence = 'PLACEHOLDER'
+
+#TODO .... TRANSLATE!!!!
+
+print(' Translated Codon Sequence: ' + tSequence + '\n\n' )
 
 codons = {
 	'TTT' : 'Phe',
@@ -102,3 +111,4 @@ codons = {
 	'GGA' : 'Gly',
 	'GGG' : 'Gly',
 }
+
