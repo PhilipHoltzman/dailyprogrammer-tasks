@@ -1,4 +1,5 @@
 #!Python 3.5
+
 # DNA Replication challenge from /r/dailyprogrammer
 
 # bases adenine, thymine, guanine, cytosine. 
@@ -9,41 +10,6 @@
 # as input and return the complementary strand.
 
 # Input Strand: A A T G C C T A T G G C
-
-
-
-print('\n\n..:DNA Replication Engine:.\n')
-
-# initial strand
-iStrand = 'AATGCCTATGGC'
-# complimentary strand
-cStrand = ''
-
-for i in iStrand:
-	if i == 'A':
-		cStrand +='T'
-	if i == 'T':
-		cStrand +='A'
-	if i == 'G':
-		cStrand +='C'
-	if i == 'C':
-		cStrand +='G'
-
-
-print('\n\n Initial Sequence Strand:\n\n ' + iStrand+ '\n')
-
-
-print(' Complimentary Base Pair Sequence:\n\n ' + cStrand + '\n\n')
-
-iSequence = 'ATGTTTCGAGGCTAA'
-
-print('\n\n Initial DNA Sequence: ' + iSequence + '\n\n')
-
-tSequence = 'PLACEHOLDER'
-
-#TODO .... TRANSLATE!!!!
-
-print(' Translated Codon Sequence: ' + tSequence + '\n\n' )
 
 codons = {
 	'TTT' : 'Phe',
@@ -112,3 +78,45 @@ codons = {
 	'GGG' : 'Gly',
 }
 
+
+
+
+print('\n\n..:DNA Replication Engine:.\n')
+
+# initial strand
+iStrand = 'AATGCCTATGGC'
+# complimentary strand
+cStrand = ''
+
+for i in iStrand:
+	if i == 'A':
+		cStrand +='T'
+	if i == 'T':
+		cStrand +='A'
+	if i == 'G':
+		cStrand +='C'
+	if i == 'C':
+		cStrand +='G'
+
+
+print('\n\n Initial Sequence Strand:\n\n ' + iStrand+ '\n')
+
+
+print(' Complimentary Base Pair Sequence:\n\n ' + cStrand + '\n\n')
+
+iSequence = 'ATGTTTCGAGGCTAA'
+
+print('\n\n Initial DNA Sequence: ' + iSequence + '\n\n')
+
+tSequence = ''
+
+# Split strings to every 3rd letter and assign to parsed list of untranslated codons
+pSequence = [iSequence[i:i+3] for i in range(0, len(iSequence), 3)]
+
+
+# Loop through list translating individiual codons and writing to new variable
+for i in pSequence:
+	if i in codons.keys():
+		tSequence += codons[i]
+
+print(' Translated Codon Sequence: ' + tSequence + '\n\n' )
